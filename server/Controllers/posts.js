@@ -4,6 +4,8 @@ export const getPosts = async (req, res) => {
   try {
     const postMessages = await PostMessage.find();
     res.status(200).json(postMessages);
+    console.log("got a get request");
+    console.log(req.body);
   } catch (error) {
     res.status(404).json({ error: error.message });
   }
@@ -11,7 +13,8 @@ export const getPosts = async (req, res) => {
 
 export const createPosts = async (req, res) => {
   const post = req.body;
-
+  console.log("got a post request");
+  console.log(req.body);
   const newPost = new PostMessage(post);
 
   try {

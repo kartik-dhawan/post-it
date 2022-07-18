@@ -58,6 +58,9 @@
                 align-items: center;
                 font-size: 31px;
             }
+            input{
+                // display: none;
+            }
         }
         .postButton{
             width: max-content;
@@ -91,3 +94,7 @@
         @include footer;
     }
 }
+
+// ::-webkit-file-upload-button{
+//     background-image: url('/Users/kartik.dhawan/dev/MERN/post-it/client/src/assets/upload.png');
+// }

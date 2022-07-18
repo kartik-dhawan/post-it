@@ -15,7 +15,7 @@ app.use(cors());
 // const CONNECTION_URL =
 //   "mongodb+srv://<username>:<password>@<clustername>.fbb80.mongodb.net/<databasename>?retryWrites=true&w=majority";
 
-const PORT = 3001;
+const PORT = 5001;
 
 mongoose
   .connect(CONNECTION_URL, {
@@ -23,7 +23,9 @@ mongoose
     useUnifiedTopology: true,
   })
   .then(() => {
-    app.listen(PORT, () => console.log("Listening on port: " + PORT));
+    app.listen(PORT, "localhost", () =>
+      console.log("Listening on port: " + PORT)
+    );
   })
   .catch((err) => console.log(err));
 
