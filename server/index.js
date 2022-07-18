@@ -3,6 +3,7 @@ import cors from "cors";
 import bodyParser from "body-parser";
 import mongoose from "mongoose";
 
+import { CONNECTION_URL } from "./url.js";
 import postRoutes from "./Routes/posts.js";
 
 const app = express();
@@ -11,8 +12,8 @@ app.use(bodyParser.json({ limit: "30mb", extended: true }));
 app.use(bodyParser.urlencoded({ limit: "30mb", extended: true }));
 app.use(cors());
 
-const CONNECTION_URL =
-  "mongodb+srv://shelby:shelby101@cluster0.fbb80.mongodb.net/post-it?retryWrites=true&w=majority";
+// const CONNECTION_URL =
+//   "mongodb+srv://<username>:<password>@<clustername>.fbb80.mongodb.net/<databasename>?retryWrites=true&w=majority";
 
 const PORT = 3001;
 
