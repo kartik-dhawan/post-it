@@ -2,10 +2,21 @@ import React from "react";
 
 const Header = () => {
   return (
-    <div className="homeHeader">
-      <div className="homeTitle">Post It</div>
-      <div className="homeGithub">Github</div>
-      <div className="homeAbout">About</div>
+    <div className="header">
+      <a href="/" className="homeTitle">
+        Post It
+      </a>
+      <a
+        href="https://github.com/kartikd07"
+        target="_blank"
+        className="homeGithub"
+        rel="noreferrer"
+      >
+        Github
+      </a>
+      <a href="/" className="homeAbout">
+        About
+      </a>
     </div>
   );
 };

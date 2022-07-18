@@ -5,7 +5,7 @@ const Footer = () => {
   const email = "dhawankartik7@gmail.com";
 
   return (
-    <div className="homeFooter">
+    <div className="footer">
       <div className="footerLinkedin">
         <BsArrowRight />
         <a href="/" className="linkedinLink">
@@ -14,7 +14,9 @@ const Footer = () => {
       </div>
       <div className="footerEmail">
         <BsArrowRight />
-        <p className="email">Email: {email}</p>
+        <a href="/" className="email">
+          Email
+        </a>
       </div>
     </div>
   );

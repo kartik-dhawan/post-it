@@ -14,7 +14,7 @@ const Section = () => {
         <div className="sectionArrow">
           <BsArrowRight />
         </div>
-        <a href="/" className="sectionButton">
+        <a href="/form" className="sectionButton">
           CREATE POST
         </a>
       </div>

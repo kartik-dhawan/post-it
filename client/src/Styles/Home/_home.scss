@@ -1,27 +1,54 @@
+@mixin header{
+    display: flex;
+    align-items: center;
+    font-size: 18px;
+    text-transform: uppercase;
+    height: 6rem;
+    padding: 1.5rem;
+    box-sizing: border-box;
+    & > a:nth-child(2){
+        margin-left: auto;
+    }
+    & > a {
+        margin: 1rem;
+        &:any-link{
+            color: #000;
+            text-decoration: none;
+        }
+    }
+}
+
+@mixin footer{
+    display: flex;
+    align-items: center;
+    height: 6rem;
+    padding: 1.5rem;
+    box-sizing: border-box;
+    text-transform: uppercase;
+    & > div{
+        margin: 1rem;
+        display: flex;
+        align-items: center;
+        .linkedinLink, .email{
+            margin: 0px 10px
+        }
+        .linkedinLink:any-link, .email:any-link{
+            color: #000;
+        }
+
+    }
+}
+
 .homePage{
     height: 100vh;
     max-height: -webkit-fill-available;
     width: 100vw;
     background-color: antiquewhite;
-    font-family: 'Courier', Courier, monospace;
-    font-family: 'Overpass Mono', monospace;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    .homeHeader{
-        display: flex;
-        align-items: center;
-        font-size: 18px;
-        text-transform: uppercase;
-        height: 6rem;
-        padding: 1.5rem;
-        box-sizing: border-box;
-        & > div:nth-child(2){
-            margin-left: auto;
-        }
-        & > div{
-            margin: 1rem;
-        }
+    .header{
+        @include header;
     }
     .homeSection{
         display: flex;
@@ -52,23 +79,7 @@
             }
         }
     }
-    .homeFooter{
-        display: flex;
-        align-items: center;
-        height: 6rem;
-        padding: 1.5rem;
-        box-sizing: border-box;
-        text-transform: uppercase;
-        & > div{
-            margin: 1rem;
-            display: flex;
-            align-items: center;
-            .linkedinLink, .email{
-                margin: 0px 10px
-            }
-            .linkedinLink:any-link{
-                color: #000;
-            }
-        }
+    .footer{
+        @include footer;
     }
 }
