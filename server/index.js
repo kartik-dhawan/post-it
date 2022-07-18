@@ -3,7 +3,7 @@ import cors from "cors";
 import bodyParser from "body-parser";
 import mongoose from "mongoose";
 
-import { CONNECTION_URL } from "./url.js";
+import { CONNECTION_URL } from "./mongooseUrl.js";
 import postRoutes from "./Routes/posts.js";
 
 const app = express();
