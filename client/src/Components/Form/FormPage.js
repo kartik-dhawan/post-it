@@ -12,8 +12,8 @@ const FormPage = () => {
 
   const [post, setPost] = useState({
     title: "",
-    message: "",
-    creator: "",
+    artist: "",
+    album: "",
     tags: "",
     file: "",
   });
@@ -28,7 +28,7 @@ const FormPage = () => {
   return (
     <div className="formPage">
       <Header />
-      <div className="formHead">Create your own post</div>
+      <div className="formHead">Create your own song-post</div>
       <form className="postForm" noValidate>
         <label htmlFor="title">
           Title
@@ -43,29 +43,29 @@ const FormPage = () => {
             }}
           />
         </label>
-        <label htmlFor="message">
-          Message
+        <label htmlFor="artist">
+          Artist
           <input
             type="text"
-            id="message"
+            id="artist"
             required
-            placeholder="Enter the message"
-            value={post.message}
+            placeholder="Enter the artist's name"
+            value={post.artist}
             onChange={(e) => {
-              setPost({ ...post, message: e.target.value });
+              setPost({ ...post, artist: e.target.value });
             }}
           />
         </label>
-        <label htmlFor="creator">
-          Creator
+        <label htmlFor="album">
+          Album
           <input
             type="text"
-            id="creator"
+            id="album"
             required
-            placeholder="Enter the creator name"
-            value={post.creator}
+            placeholder="Enter the album name"
+            value={post.album}
             onChange={(e) => {
-              setPost({ ...post, creator: e.target.value });
+              setPost({ ...post, album: e.target.value });
             }}
           />
         </label>
@@ -73,7 +73,7 @@ const FormPage = () => {
           Tags
           <input
             type="text"
-            id="tagsSelect Image"
+            id="tags"
             required
             placeholder="Enter the tags separated by comma"
             value={post.tags}
@@ -83,7 +83,7 @@ const FormPage = () => {
           />
         </label>
         <label htmlFor="image">
-          Select Image
+          Select Cover
           <FileUploadIcon
             onClick={() => {
               document.getElementById("image").click();

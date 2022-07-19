@@ -2,8 +2,8 @@ import mongoose from "mongoose";
 
 const postSchema = mongoose.Schema({
   title: String,
-  message: String,
-  creator: String,
+  artist: String,
+  album: String,
   tags: String,
   file: [String],
   likes: {
@@ -16,5 +16,5 @@ const postSchema = mongoose.Schema({
   },
 });
 
-const PostMessage = mongoose.model("PostMessage", postSchema);
-export default PostMessage;
+const SongPosts = mongoose.model("SongPosts", postSchema);
+export default SongPosts;
