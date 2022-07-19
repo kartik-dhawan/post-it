@@ -1,3 +1,6 @@
+$darkBg: #180f03;
+$darkText: #b0a393;
+
 @mixin textfield{
     background: none;
     border: none;
@@ -23,8 +26,35 @@
     width: 100vw;
     display: flex;
     flex-direction: column;
+    position: relative;
     .header{
         @include header;
+    }
+    .darkHeader{
+        background-color: $darkBg;
+        color: $darkText;
+        display: none;
+        & > a {
+            &:any-link{
+                color: $darkText;
+            }
+        }
+    }
+    .createdPostPage{
+        margin-bottom: auto;
+        background-color: $darkBg;
+        color: $darkText;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        max-height: -webkit-fill-available;
+        button{
+            position: absolute;
+            top: 20px;
+            right: 20px
+        }
     }
     .formHead{
         font-size: 20px;
@@ -58,9 +88,6 @@
                 align-items: center;
                 font-size: 31px;
             }
-            input{
-                // display: none;
-            }
         }
         .postButton{
             width: max-content;
@@ -92,6 +119,17 @@
     }
     .footer{
         @include footer;
+    }
+    .darkFooter{
+        color: $darkText;
+        background-color: $darkBg;
+        display: none;
+        & > div{
+            .linkedinLink:any-link, .email:any-link{
+                color: $darkText;
+            }
+    
+        }
     }
 }
 

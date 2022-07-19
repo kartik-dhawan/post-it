@@ -160,6 +160,7 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  position: relative;
 }
 
 .formPage .header {
@@ -198,6 +199,51 @@
 .formPage .header > a:any-link {
   color: #000;
   text-decoration: none;
+}
+
+.formPage .darkHeader {
+  background-color: #180f03;
+  color: #b0a393;
+  display: none;
+}
+
+.formPage .darkHeader > a:-webkit-any-link {
+  color: #b0a393;
+}
+
+.formPage .darkHeader > a:-moz-any-link {
+  color: #b0a393;
+}
+
+.formPage .darkHeader > a:any-link {
+  color: #b0a393;
+}
+
+.formPage .createdPostPage {
+  margin-bottom: auto;
+  background-color: #180f03;
+  color: #b0a393;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100%;
+  max-height: -webkit-fill-available;
+}
+
+.formPage .createdPostPage button {
+  position: absolute;
+  top: 20px;
+  right: 20px;
 }
 
 .formPage .formHead {
@@ -347,6 +393,101 @@
 
 .formPage .footer > div .linkedinLink:any-link, .formPage .footer > div .email:any-link {
   color: #000;
+}
+
+.formPage .darkFooter {
+  color: #b0a393;
+  background-color: #180f03;
+  display: none;
+}
+
+.formPage .darkFooter > div .linkedinLink:-webkit-any-link, .formPage .darkFooter > div .email:-webkit-any-link {
+  color: #b0a393;
+}
+
+.formPage .darkFooter > div .linkedinLink:-moz-any-link, .formPage .darkFooter > div .email:-moz-any-link {
+  color: #b0a393;
+}
+
+.formPage .darkFooter > div .linkedinLink:any-link, .formPage .darkFooter > div .email:any-link {
+  color: #b0a393;
+}
+
+.songPostContainer {
+  background: #efefef;
+  height: 80%;
+  width: 80%;
+  background-image: url("/Users/kartik.dhawan/dev/MERN/post-it/client/src/assets/SongPostBackgrounds/songpost1.0.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+.songPostContainer .songPost {
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
+  width: 230px;
+  background-color: #efefef;
+  z-index: 100;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  border-radius: 12px;
+  padding: 12px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  text-transform: uppercase;
+}
+
+.songPostContainer .songPost .postCover {
+  width: 100%;
+  aspect-ratio: 1;
+  background: #000;
+  margin-bottom: 10px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.songPostContainer .songPost .postTitle {
+  margin: 5px;
+  font-size: 20px;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  max-width: 100%;
+  color: #4f3e25;
+}
+
+.songPostContainer .songPost .postArtist {
+  margin: 5px;
+  text-transform: capitalize;
+  color: #4f3e25;
+}
+
+.songPostContainer .songPost .postTags {
+  margin: 13px 5px 5px 5px;
+}
+
+.songPostContainer .songPost .postCredits {
+  margin: 5px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.songPostContainer .songPost .postCredits .postIcon {
+  margin: 0px 5px 0px 0px;
+}
+
+.songPostContainer .songPost .postCredits .postCreditText {
+  text-transform: lowercase;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
 body {

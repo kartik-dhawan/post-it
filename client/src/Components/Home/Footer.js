@@ -1,11 +1,11 @@
 import React from "react";
 import { BsArrowRight } from "react-icons/bs";
 
-const Footer = () => {
+const Footer = ({ viewPost }) => {
   const email = "dhawankartik7@gmail.com";
 
   return (
-    <div className="footer">
+    <div className={`footer ${viewPost ? "darkFooter" : ""}`}>
       <div className="footerLinkedin">
         <BsArrowRight />
         <a href="/" className="linkedinLink">
