@@ -240,10 +240,34 @@
   max-height: -webkit-fill-available;
 }
 
-.formPage .createdPostPage button {
+.formPage .createdPostPage .cardActionBtns {
   position: absolute;
-  top: 20px;
-  right: 20px;
+  top: 15px;
+  right: 15px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.formPage .createdPostPage .closeCardBtn, .formPage .createdPostPage .downloadCardBtn {
+  cursor: pointer;
+  margin: 5px;
+  -webkit-transition: 300ms all ease-in-out;
+  transition: 300ms all ease-in-out;
+}
+
+.formPage .createdPostPage .closeCardBtn svg, .formPage .createdPostPage .downloadCardBtn svg {
+  width: 26px;
+  height: 26px;
+  color: #c8bebe;
+}
+
+.formPage .createdPostPage .closeCardBtn:hover, .formPage .createdPostPage .downloadCardBtn:hover {
+  -webkit-transform: scale(1.3);
+          transform: scale(1.3);
 }
 
 .formPage .formHead {
@@ -353,6 +377,11 @@
 
 .formPage .postForm .postButton p {
   margin: 0px 5px;
+}
+
+.formPage .postForm .postButton:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
 }
 
 .formPage .footer {

@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from "react";
+/* eslint-disable jsx-a11y/anchor-is-valid */
+import React, { useState, useEffect, useCallback, useRef } from "react";
 import Header from "../Home/Header";
 import FileUploadIcon from "@mui/icons-material/FileUpload";
 import { BsArrowRight } from "react-icons/bs";
@@ -7,6 +8,10 @@ import SongPost from "./SongPost";
 import FileBase64 from "react-file-base64";
 import { useSelector, useDispatch } from "react-redux";
 import { postData, getData } from "../../redux/reducers/postsSlice";
+import * as htmlToImage from "html-to-image";
+import { toPng, toJpeg, toBlob, toPixelData, toSvg } from "html-to-image";
+import { HiDownload } from "react-icons/hi";
+import { IoClose } from "react-icons/io5";
 
 const FormPage = () => {
   const dispatch = useDispatch();
@@ -36,13 +41,31 @@ const FormPage = () => {
           <div className="songPostContainer">
             <SongPost post={post} />
           </div>
-          <button
-            onClick={() => {
-              setViewPost(!viewPost);
-            }}
-          >
-            Close
-          </button>
+          <div className="cardActionBtns">
+            <a
+              className="downloadCardBtn"
+              onClick={() => {
+                htmlToImage
+                  .toPng(document.querySelector(".songPostContainer"))
+                  .then((dataUrl) => {
+                    const link = document.createElement("a");
+                    link.download = "songcard.png";
+                    link.href = dataUrl;
+                    link.click();
+                  });
+              }}
+            >
+              <HiDownload />
+            </a>
+            <a
+              className="closeCardBtn"
+              onClick={() => {
+                setViewPost(!viewPost);
+              }}
+            >
+              <IoClose />
+            </a>
+          </div>
         </div>
       ) : (
         <>
@@ -115,18 +138,37 @@ const FormPage = () => {
                 <input></input>
               </FileBase64>
             </label>
-            <button
-              type="submit"
-              className="postButton"
-              onClick={(e) => {
-                e.preventDefault();
-                console.log(post);
-                dispatch(postData({ post }));
-              }}
-            >
-              <BsArrowRight />
-              <p>Create</p>
-            </button>
+            {post.title == "" || post.artist == "" || post.file == "" ? (
+              <button
+                type="submit"
+                className="postButton"
+                onClick={(e) => {
+                  e.preventDefault();
+                  console.log(post);
+                  dispatch(postData({ post }));
+                  setViewPost(!viewPost);
+                }}
+                disabled
+              >
+                <BsArrowRight />
+                <p>Create</p>
+              </button>
+            ) : (
+              <button
+                type="submit"
+                className="postButton"
+                onClick={(e) => {
+                  e.preventDefault();
+                  console.log(post);
+                  dispatch(postData({ post }));
+                  setViewPost(!viewPost);
+                }}
+              >
+                <BsArrowRight />
+                <p>Create</p>
+              </button>
+            )}
+
             <button
               className="postButton"
               onClick={(e) => {
