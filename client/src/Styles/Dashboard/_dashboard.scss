@@ -1,0 +1,55 @@
+.dashboardPage{
+    background-color: #1d1307;
+    color: #d0c3b2;
+    display: flex;
+    flex-direction: column;
+    height: max-content;
+    max-height: -webkit-fill-available;
+    .header{
+        @include header;
+        & > a:any-link{
+            color: #d0c3b2;
+        }
+    }
+    .dashboardBody{
+        padding: 1rem 2.5rem;
+        box-sizing: border-box;
+        .dashboardHeading{
+            text-transform: uppercase;
+            font-size: xx-large;
+            width: 100%;
+            border-bottom: 0.3px solid #d0c3b2;
+        }
+        .cardLayout{
+            height: max-content;
+            display: flex;
+            justify-content: center;
+            margin: 3rem 0rem;
+            .cardsContainer{
+                display: flex;
+                flex-wrap: wrap;
+                height: 100%;
+                width: 90%;
+                position: relative;
+                left: 50%;
+                transform: translateX(-50%);
+                .songPost{
+                    @include songpost;
+                    // grid-row-end: span 43;
+                    height: max-content;
+                    margin: 10px;
+                }
+            }
+        }
+        .dashBoardBtn{
+            @include buttonTheme;
+        }
+    }
+    .footer{
+        @include footer;
+        margin-top: auto;
+        & > div .linkedinLink:any-link, div .email:any-link{
+            color: #d0c3b2;
+        }
+    }
+}

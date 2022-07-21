@@ -1,5 +1,5 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import React, { useState, useEffect, useCallback, useRef } from "react";
+import React, { useState, useEffect } from "react";
 import Header from "../Home/Header";
 import FileUploadIcon from "@mui/icons-material/FileUpload";
 import { BsArrowRight } from "react-icons/bs";
@@ -138,7 +138,7 @@ const FormPage = () => {
                 <input></input>
               </FileBase64>
             </label>
-            {post.title == "" || post.artist == "" || post.file == "" ? (
+            {post.title === "" || post.artist === "" || post.file === "" ? (
               <button
                 type="submit"
                 className="postButton"
@@ -180,6 +180,11 @@ const FormPage = () => {
               <BsArrowRight />
               <p>Open</p>
             </button>
+
+            <a href="/dashboard" className="postButton">
+              <BsArrowRight />
+              <p>Dashboard</p>
+            </a>
           </form>
         </>
       )}
