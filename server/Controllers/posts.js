@@ -1,8 +1,8 @@
-import PostMessage from "../Models/postNote.js";
+import SongPosts from "../Models/postNote.js";
 
 export const getPosts = async (req, res) => {
   try {
-    const postMessages = await PostMessage.find();
+    const postMessages = await SongPosts.find();
     res.status(200).json(postMessages);
     console.log("got a get request");
     console.log(req.body);
@@ -15,7 +15,7 @@ export const createPosts = async (req, res) => {
   const post = req.body;
   console.log("got a post request");
   console.log(req.body);
-  const newPost = new PostMessage(post);
+  const newPost = new SongPosts(post);
 
   try {
     await newPost.save();

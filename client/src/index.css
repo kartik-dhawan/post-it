@@ -87,9 +87,9 @@
           align-items: center;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  padding: 0.5rem;
+  padding: 2rem 0.5rem;
   font-size: 18px;
-  height: 6rem;
+  height: 3rem;
 }
 
 .homePage .homeSection .sectionLink > div {
@@ -160,6 +160,7 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  position: relative;
 }
 
 .formPage .header {
@@ -198,6 +199,75 @@
 .formPage .header > a:any-link {
   color: #000;
   text-decoration: none;
+}
+
+.formPage .darkHeader {
+  background-color: #180f03;
+  color: #b0a393;
+  display: none;
+}
+
+.formPage .darkHeader > a:-webkit-any-link {
+  color: #b0a393;
+}
+
+.formPage .darkHeader > a:-moz-any-link {
+  color: #b0a393;
+}
+
+.formPage .darkHeader > a:any-link {
+  color: #b0a393;
+}
+
+.formPage .createdPostPage {
+  margin-bottom: auto;
+  background-color: #180f03;
+  color: #b0a393;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100%;
+  max-height: -webkit-fill-available;
+}
+
+.formPage .createdPostPage .cardActionBtns {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.formPage .createdPostPage .closeCardBtn, .formPage .createdPostPage .downloadCardBtn {
+  cursor: pointer;
+  margin: 5px;
+  -webkit-transition: 300ms all ease-in-out;
+  transition: 300ms all ease-in-out;
+}
+
+.formPage .createdPostPage .closeCardBtn svg, .formPage .createdPostPage .downloadCardBtn svg {
+  width: 26px;
+  height: 26px;
+  color: #c8bebe;
+}
+
+.formPage .createdPostPage .closeCardBtn:hover, .formPage .createdPostPage .downloadCardBtn:hover {
+  -webkit-transform: scale(1.3);
+          transform: scale(1.3);
 }
 
 .formPage .formHead {
@@ -309,6 +379,11 @@
   margin: 0px 5px;
 }
 
+.formPage .postForm .postButton:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
 .formPage .footer {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -347,6 +422,442 @@
 
 .formPage .footer > div .linkedinLink:any-link, .formPage .footer > div .email:any-link {
   color: #000;
+}
+
+.formPage .darkFooter {
+  color: #b0a393;
+  background-color: #180f03;
+  display: none;
+}
+
+.formPage .darkFooter > div .linkedinLink:-webkit-any-link, .formPage .darkFooter > div .email:-webkit-any-link {
+  color: #b0a393;
+}
+
+.formPage .darkFooter > div .linkedinLink:-moz-any-link, .formPage .darkFooter > div .email:-moz-any-link {
+  color: #b0a393;
+}
+
+.formPage .darkFooter > div .linkedinLink:any-link, .formPage .darkFooter > div .email:any-link {
+  color: #b0a393;
+}
+
+.songPostContainer {
+  background: #efefef;
+  height: 80%;
+  width: 80%;
+  background-image: url("/Users/kartik.dhawan/dev/MERN/post-it/client/src/assets/SongPostBackgrounds/songpost1.0.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+.songPostContainer .songPost {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
+  width: 230px;
+  background-color: #efefef;
+  z-index: 100;
+  border-radius: 12px;
+  padding: 12px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  text-transform: uppercase;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.songPostContainer .songPost img {
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.songPostContainer .songPost .postCover {
+  aspect-ratio: 1;
+  background: #000;
+  margin-bottom: 10px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.songPostContainer .songPost .postTitle {
+  margin: 5px;
+  font-size: 20px;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  max-width: 100%;
+  color: #4f3e25;
+}
+
+.songPostContainer .songPost .postArtist {
+  margin: 5px;
+  text-transform: capitalize;
+  color: #4f3e25;
+}
+
+.songPostContainer .songPost .postTags {
+  margin: 13px 5px 5px 5px;
+}
+
+.songPostContainer .songPost .postCredits {
+  margin: 5px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: auto;
+}
+
+.songPostContainer .songPost .postCredits .postIcon {
+  margin: 0px 5px 0px 0px;
+}
+
+.songPostContainer .songPost .postCredits .postCreditText {
+  text-transform: lowercase;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.dashboardPage {
+  background-color: #1d1307;
+  color: #d0c3b2;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  min-height: 100vh;
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
+  max-height: -webkit-fill-available;
+}
+
+.dashboardPage .header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 18px;
+  text-transform: uppercase;
+  height: 6rem;
+  padding: 1.5rem;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.dashboardPage .header > a:nth-child(2) {
+  margin-left: auto;
+}
+
+.dashboardPage .header > a {
+  margin: 1rem;
+}
+
+.dashboardPage .header > a:-webkit-any-link {
+  color: #000;
+  text-decoration: none;
+}
+
+.dashboardPage .header > a:-moz-any-link {
+  color: #000;
+  text-decoration: none;
+}
+
+.dashboardPage .header > a:any-link {
+  color: #000;
+  text-decoration: none;
+}
+
+.dashboardPage .header > a:-webkit-any-link {
+  color: #d0c3b2;
+}
+
+.dashboardPage .header > a:-moz-any-link {
+  color: #d0c3b2;
+}
+
+.dashboardPage .header > a:any-link {
+  color: #d0c3b2;
+}
+
+.dashboardPage .dashboardBody {
+  padding: 1rem 2.5rem;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  position: relative;
+}
+
+.dashboardPage .dashboardBody .dashboardHeading {
+  text-transform: uppercase;
+  font-size: xx-large;
+  width: 100%;
+  border-bottom: 0.3px solid #d0c3b2;
+}
+
+.dashboardPage .dashboardBody .cardLayout {
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: 3rem 0rem;
+}
+
+.dashboardPage .dashboardBody .cardLayout .cardsContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  height: 100%;
+  width: 90%;
+  margin: auto;
+  position: relative;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.dashboardPage .dashboardBody .cardLayout .cardsContainer .songPost {
+  width: 230px;
+  background-color: #efefef;
+  z-index: 100;
+  border-radius: 12px;
+  padding: 12px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  text-transform: uppercase;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
+  margin: 30px 20px;
+}
+
+.dashboardPage .dashboardBody .cardLayout .cardsContainer .songPost img {
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.dashboardPage .dashboardBody .cardLayout .cardsContainer .songPost .postCover {
+  aspect-ratio: 1;
+  background: #000;
+  margin-bottom: 10px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.dashboardPage .dashboardBody .cardLayout .cardsContainer .songPost .postTitle {
+  margin: 5px;
+  font-size: 20px;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  max-width: 100%;
+  color: #4f3e25;
+}
+
+.dashboardPage .dashboardBody .cardLayout .cardsContainer .songPost .postArtist {
+  margin: 5px;
+  text-transform: capitalize;
+  color: #4f3e25;
+}
+
+.dashboardPage .dashboardBody .cardLayout .cardsContainer .songPost .postTags {
+  margin: 13px 5px 5px 5px;
+}
+
+.dashboardPage .dashboardBody .cardLayout .cardsContainer .songPost .postCredits {
+  margin: 5px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: auto;
+}
+
+.dashboardPage .dashboardBody .cardLayout .cardsContainer .songPost .postCredits .postIcon {
+  margin: 0px 5px 0px 0px;
+}
+
+.dashboardPage .dashboardBody .cardLayout .cardsContainer .songPost .postCredits .postCreditText {
+  text-transform: lowercase;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.dashboardPage .dashboardBody .cardLayout .loaderDashboard {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-transition: all ease;
+  transition: all ease;
+  min-height: 200px;
+}
+
+.dashboardPage .dashboardBody .cardLayout .loaderDashboard .ballLoader {
+  height: 17px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background-color: antiquewhite;
+  margin: 4px;
+  -webkit-animation: bounce 1s infinite alternate;
+          animation: bounce 1s infinite alternate;
+}
+
+@-webkit-keyframes bounce {
+  to {
+    height: 23px;
+    width: 23px;
+    -webkit-transform: translate3d(-10px, -16px, 0);
+            transform: translate3d(-10px, -16px, 0);
+  }
+}
+
+@keyframes bounce {
+  to {
+    height: 23px;
+    width: 23px;
+    -webkit-transform: translate3d(-10px, -16px, 0);
+            transform: translate3d(-10px, -16px, 0);
+  }
+}
+
+.dashboardPage .dashboardBody .cardLayout .loaderDashboard .ballLoader:nth-child(2) {
+  -webkit-animation-delay: 250ms;
+          animation-delay: 250ms;
+}
+
+.dashboardPage .dashboardBody .cardLayout .loaderDashboard .ballLoader:nth-child(3) {
+  -webkit-animation-delay: 400ms;
+          animation-delay: 400ms;
+}
+
+.dashboardPage .dashboardBody .dashBoardBtn {
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 1rem 2rem;
+  padding: 4px 8px 2px 10px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin-left: auto;
+  background-color: #544b3f;
+  border: none;
+  border-bottom: 1px solid antiquewhite;
+  color: antiquewhite;
+  text-transform: uppercase;
+  font-family: 'Overpass Mono', monospace;
+  font-size: 18px;
+  cursor: pointer;
+  height: 40px;
+  -webkit-transition: 500ms all ease-in-out;
+  transition: 500ms all ease-in-out;
+}
+
+.dashboardPage .dashboardBody .dashBoardBtn:hover {
+  background: none;
+  color: #000;
+  border-color: #000;
+}
+
+.dashboardPage .dashboardBody .dashBoardBtn p {
+  margin: 0px 5px;
+}
+
+.dashboardPage .dashboardBody .dashBoardBtn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.dashboardPage .footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 6rem;
+  padding: 1.5rem;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  text-transform: uppercase;
+  margin-top: auto;
+}
+
+.dashboardPage .footer > div {
+  margin: 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.dashboardPage .footer > div .linkedinLink, .dashboardPage .footer > div .email {
+  margin: 0px 10px;
+}
+
+.dashboardPage .footer > div .linkedinLink:-webkit-any-link, .dashboardPage .footer > div .email:-webkit-any-link {
+  color: #000;
+}
+
+.dashboardPage .footer > div .linkedinLink:-moz-any-link, .dashboardPage .footer > div .email:-moz-any-link {
+  color: #000;
+}
+
+.dashboardPage .footer > div .linkedinLink:any-link, .dashboardPage .footer > div .email:any-link {
+  color: #000;
+}
+
+.dashboardPage .footer > div .linkedinLink:-webkit-any-link, .dashboardPage .footer div .email:-webkit-any-link {
+  color: #d0c3b2;
+}
+
+.dashboardPage .footer > div .linkedinLink:-moz-any-link, .dashboardPage .footer div .email:-moz-any-link {
+  color: #d0c3b2;
+}
+
+.dashboardPage .footer > div .linkedinLink:any-link, .dashboardPage .footer div .email:any-link {
+  color: #d0c3b2;
 }
 
 body {

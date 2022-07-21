@@ -1,8 +1,8 @@
 import React from "react";
 
-const Header = () => {
+const Header = ({ viewPost }) => {
   return (
-    <div className="header">
+    <div className={`header ${viewPost ? "darkHeader" : ""}`}>
       <a href="/" className="homeTitle">
         Post It
       </a>
