@@ -14,8 +14,7 @@ const Dashboard = () => {
   }, [dispatch]);
 
   const cardsData = useSelector((state) => state.posts.posts);
-  const cardsLoading = useSelector((state) => state.posts.isLoading);
-  console.log(cardsLoading);
+  const isLoading = useSelector((state) => state.posts.isLoading);
 
   return (
     <div className="dashboardPage">
@@ -25,21 +24,20 @@ const Dashboard = () => {
           Your very own customizable dashboard
         </div>
         <div className="cardLayout">
-          <div className="cardsContainer">
-            {cardsData.map((card) => {
-              return <SongPost key={card._id} post={card} />;
-            })}
-          </div>
+          {isLoading ? (
+            <div className="loaderDashboard">
+              <div className="ballLoader" />
+              <div className="ballLoader" />
+              <div className="ballLoader" />
+            </div>
+          ) : (
+            <div className="cardsContainer">
+              {cardsData.map((card) => {
+                return <SongPost key={card._id} post={card} />;
+              })}
+            </div>
+          )}
         </div>
-        <button
-          className="dashBoardBtn"
-          onClick={() => {
-            console.log(cardsData);
-          }}
-        >
-          <BsArrowRight />
-          <p>Show</p>
-        </button>
       </section>
       <Footer />
     </div>
