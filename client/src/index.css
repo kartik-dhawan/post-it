@@ -602,6 +602,7 @@
   padding: 1rem 2.5rem;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  position: relative;
 }
 
 .dashboardPage .dashboardBody .dashboardHeading {
@@ -726,7 +727,7 @@
 }
 
 .dashboardPage .dashboardBody .cardLayout .loaderDashboard .ballLoader {
-  height: 20px;
+  height: 17px;
   aspect-ratio: 1;
   border-radius: 50%;
   background-color: antiquewhite;

@@ -143,7 +143,7 @@ const FormPage = () => {
             {post.title === "" || post.artist === "" || post.file === "" ? (
               <button type="submit" className="postButton" disabled>
                 <BsArrowRight />
-                <p>Create & Save</p>
+                <p>Create & Save to Dashboard</p>
               </button>
             ) : (
               <button
@@ -157,21 +157,27 @@ const FormPage = () => {
                 }}
               >
                 <BsArrowRight />
-                <p>Create & Save</p>
+                <p>Create & Save to dashboard</p>
               </button>
             )}
-
-            <button
-              className="postButton"
-              onClick={(e) => {
-                console.log(post);
-                e.preventDefault();
-                setViewPost(!viewPost);
-              }}
-            >
-              <BsArrowRight />
-              <p>Create</p>
-            </button>
+            {post.title === "" || post.artist === "" || post.file === "" ? (
+              <button type="submit" className="postButton" disabled>
+                <BsArrowRight />
+                <p>Create</p>
+              </button>
+            ) : (
+              <button
+                className="postButton"
+                onClick={(e) => {
+                  console.log(post);
+                  e.preventDefault();
+                  setViewPost(!viewPost);
+                }}
+              >
+                <BsArrowRight />
+                <p>Create</p>
+              </button>
+            )}
 
             <a href="/dashboard" className="postButton">
               <BsArrowRight />

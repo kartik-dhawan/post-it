@@ -15,6 +15,7 @@
     .dashboardBody{
         padding: 1rem 2.5rem;
         box-sizing: border-box;
+        position: relative;
         .dashboardHeading{
             text-transform: uppercase;
             font-size: xx-large;
@@ -46,7 +47,7 @@
                 transition: all ease;
                 min-height: 200px;
                 .ballLoader{
-                    height: 20px;
+                    height: 17px;
                     aspect-ratio: 1;
                     border-radius: 50%;
                     background-color: antiquewhite;

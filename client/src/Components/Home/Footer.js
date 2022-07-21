@@ -8,7 +8,12 @@ const Footer = ({ viewPost }) => {
     <div className={`footer ${viewPost ? "darkFooter" : ""}`}>
       <div className="footerLinkedin">
         <BsArrowRight />
-        <a href="/" className="linkedinLink">
+        <a
+          href="https://www.linkedin.com/in/kartik-dhawan-13585b211/"
+          target="_blank"
+          rel="noreferrer"
+          className="linkedinLink"
+        >
           LinkedIn
         </a>
       </div>
