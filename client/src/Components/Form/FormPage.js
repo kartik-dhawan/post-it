@@ -18,13 +18,14 @@ const FormPage = () => {
 
   const [viewPost, setViewPost] = useState(false);
 
-  const [post, setPost] = useState({
+  const initialEmptyPost = {
     title: "",
     artist: "",
     album: "",
     tags: "",
     file: "",
-  });
+  };
+  const [post, setPost] = useState(initialEmptyPost);
 
   useEffect(() => {
     dispatch(getData());
@@ -61,6 +62,7 @@ const FormPage = () => {
               className="closeCardBtn"
               onClick={() => {
                 setViewPost(!viewPost);
+                setPost(initialEmptyPost);
               }}
             >
               <IoClose />
@@ -139,19 +141,9 @@ const FormPage = () => {
               </FileBase64>
             </label>
             {post.title === "" || post.artist === "" || post.file === "" ? (
-              <button
-                type="submit"
-                className="postButton"
-                onClick={(e) => {
-                  e.preventDefault();
-                  console.log(post);
-                  dispatch(postData({ post }));
-                  setViewPost(!viewPost);
-                }}
-                disabled
-              >
+              <button type="submit" className="postButton" disabled>
                 <BsArrowRight />
-                <p>Create</p>
+                <p>Create & Save</p>
               </button>
             ) : (
               <button
@@ -159,13 +151,13 @@ const FormPage = () => {
                 className="postButton"
                 onClick={(e) => {
                   e.preventDefault();
-                  console.log(post);
                   dispatch(postData({ post }));
                   setViewPost(!viewPost);
+                  setPost(initialEmptyPost);
                 }}
               >
                 <BsArrowRight />
-                <p>Create</p>
+                <p>Create & Save</p>
               </button>
             )}
 
@@ -178,7 +170,7 @@ const FormPage = () => {
               }}
             >
               <BsArrowRight />
-              <p>Open</p>
+              <p>Create</p>
             </button>
 
             <a href="/dashboard" className="postButton">

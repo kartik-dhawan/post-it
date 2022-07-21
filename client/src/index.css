@@ -87,9 +87,9 @@
           align-items: center;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  padding: 0.5rem;
+  padding: 2rem 0.5rem;
   font-size: 18px;
-  height: 6rem;
+  height: 3rem;
 }
 
 .homePage .homeSection .sectionLink > div {
@@ -478,8 +478,12 @@
           flex-direction: column;
 }
 
+.songPostContainer .songPost img {
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
 .songPostContainer .songPost .postCover {
-  width: 100%;
   aspect-ratio: 1;
   background: #000;
   margin-bottom: 10px;
@@ -659,8 +663,12 @@
   margin: 30px 20px;
 }
 
+.dashboardPage .dashboardBody .cardLayout .cardsContainer .songPost img {
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
 .dashboardPage .dashboardBody .cardLayout .cardsContainer .songPost .postCover {
-  width: 100%;
   aspect-ratio: 1;
   background: #000;
   margin-bottom: 10px;

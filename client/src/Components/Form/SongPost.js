@@ -7,6 +7,8 @@ const SongPost = ({ post }) => {
       <img
         alt="no file available"
         src={`${post.file}`}
+        width="100%"
+        height="100%"
         className="postCover"
       ></img>
       <div className="postTitle">{post.title}</div>

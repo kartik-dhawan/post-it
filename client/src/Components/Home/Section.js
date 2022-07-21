@@ -18,6 +18,14 @@ const Section = () => {
           CREATE POST
         </a>
       </div>
+      <div className="sectionLink">
+        <div className="sectionArrow">
+          <BsArrowRight />
+        </div>
+        <a href="/dashboard" className="sectionButton">
+          VIEW GLOBAL GALLERY
+        </a>
+      </div>
     </div>
   );
 };

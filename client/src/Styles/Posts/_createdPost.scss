@@ -8,8 +8,11 @@
     text-transform: uppercase;
     display: flex;
     flex-direction: column;
+    img{
+        object-fit: cover;
+    }
     .postCover{
-        width: 100%;
+        // width: 100%;
         aspect-ratio: 1;
         background: #000;
         margin-bottom: 10px;
