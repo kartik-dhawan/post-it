@@ -12,6 +12,7 @@ import * as htmlToImage from "html-to-image";
 import { toPng, toJpeg, toBlob, toPixelData, toSvg } from "html-to-image";
 import { HiDownload } from "react-icons/hi";
 import { IoClose } from "react-icons/io5";
+import { updateData } from "../../redux/reducers/postsSlice";
 
 const FormPage = () => {
   const dispatch = useDispatch();
@@ -148,7 +149,10 @@ const FormPage = () => {
               <button
                 className="postButton"
                 onClick={(e) => {
+                  console.log("Updated");
                   console.log(post);
+                  e.preventDefault();
+                  dispatch(updateData({ id: post._id, post: post }));
                 }}
               >
                 <BsArrowRight />
@@ -165,7 +169,7 @@ const FormPage = () => {
                 className="postButton"
                 onClick={(e) => {
                   e.preventDefault();
-                  dispatch(postData({ post }));
+                  dispatch(postData({ post: post }));
                   setViewPost(!viewPost);
                   setPost(initialEmptyPost);
                 }}
