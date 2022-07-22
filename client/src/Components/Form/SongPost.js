@@ -3,9 +3,12 @@ import { MdLibraryMusic } from "react-icons/md";
 import { AiTwotoneEdit } from "react-icons/ai";
 import { MdDelete } from "react-icons/md";
 import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { getUpdatePost } from "../../redux/reducers/updatePostSlice";
 
 const SongPost = ({ post, update, del }) => {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   return (
     <div className="songPost">
@@ -29,8 +32,7 @@ const SongPost = ({ post, update, del }) => {
             className="updatePost"
             onClick={() => {
               navigate("/form");
-              console.log(post);
-              console.log("update a record");
+              dispatch(getUpdatePost(post));
             }}
           >
             <AiTwotoneEdit />

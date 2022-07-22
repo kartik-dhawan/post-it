@@ -27,12 +27,16 @@ const FormPage = () => {
   };
   const [post, setPost] = useState(initialEmptyPost);
 
+  const postToUpdate = useSelector((state) => state.update.postToUpdate);
+  const isUpdating = useSelector((state) => state.update.isUpdating);
+
   useEffect(() => {
     dispatch(getData());
+    setPost(postToUpdate);
   }, [dispatch]);
 
   const data = useSelector((state) => state.posts.posts);
-  console.log(data);
+  data[0] && console.log(data);
 
   return (
     <div className="formPage">
@@ -140,7 +144,17 @@ const FormPage = () => {
                 <input></input>
               </FileBase64>
             </label>
-            {post.title === "" || post.artist === "" || post.file === "" ? (
+            {isUpdating ? (
+              <button
+                className="postButton"
+                onClick={(e) => {
+                  console.log(post);
+                }}
+              >
+                <BsArrowRight />
+                <p>Update</p>
+              </button>
+            ) : post.title === "" || post.artist === "" || post.file === "" ? (
               <button type="submit" className="postButton" disabled>
                 <BsArrowRight />
                 <p>Create & Save to Dashboard</p>
@@ -160,7 +174,10 @@ const FormPage = () => {
                 <p>Create & Save to dashboard</p>
               </button>
             )}
-            {post.title === "" || post.artist === "" || post.file === "" ? (
+
+            {isUpdating ? (
+              ""
+            ) : post.title === "" || post.artist === "" || post.file === "" ? (
               <button type="submit" className="postButton" disabled>
                 <BsArrowRight />
                 <p>Create</p>
@@ -178,7 +195,6 @@ const FormPage = () => {
                 <p>Create</p>
               </button>
             )}
-
             <a href="/dashboard" className="postButton">
               <BsArrowRight />
               <p>Dashboard</p>
