@@ -1,7 +1,12 @@
 import React from "react";
 import { MdLibraryMusic } from "react-icons/md";
+import { AiTwotoneEdit } from "react-icons/ai";
+import { MdDelete } from "react-icons/md";
+import { useNavigate } from "react-router-dom";
 
-const SongPost = ({ post }) => {
+const SongPost = ({ post, update, del }) => {
+  const navigate = useNavigate();
+
   return (
     <div className="songPost">
       <img
@@ -17,6 +22,34 @@ const SongPost = ({ post }) => {
       <div className="postCredits">
         <MdLibraryMusic className="postIcon" />
         <div className="postCreditText">Song-Post</div>
+      </div>
+      <div className="updateDeleteOptions">
+        {update ? (
+          <button
+            className="updatePost"
+            onClick={() => {
+              navigate("/form");
+              console.log(post);
+              console.log("update a record");
+            }}
+          >
+            <AiTwotoneEdit />
+          </button>
+        ) : (
+          ""
+        )}
+        {del ? (
+          <button
+            className="deletePost"
+            onClick={() => {
+              console.log("deleted a post");
+            }}
+          >
+            <MdDelete />
+          </button>
+        ) : (
+          ""
+        )}
       </div>
     </div>
   );
