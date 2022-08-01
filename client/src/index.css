@@ -245,12 +245,7 @@
   font-size: 18px;
   cursor: pointer;
   height: 40px;
-  transition: 500ms all ease-in-out;
-}
-.formPage .postForm .postButton:hover {
-  background: none;
-  color: #000;
-  border-color: #000;
+  transition: 380ms all ease-in-out;
 }
 .formPage .postForm .postButton p {
   margin: 0px 5px;
@@ -258,6 +253,11 @@
 .formPage .postForm .postButton:disabled {
   opacity: 0.4;
   cursor: not-allowed;
+}
+.formPage .postForm .postButton:hover {
+  background: none;
+  color: #000;
+  border-color: #000;
 }
 .formPage .footer {
   display: flex;
@@ -451,10 +451,48 @@
   position: relative;
 }
 .dashboardPage .dashboardBody .dashboardHeading {
+  display: flex;
+  flex-direction: column;
+}
+.dashboardPage .dashboardBody .dashboardHeading > p {
   text-transform: uppercase;
   font-size: xx-large;
   width: 100%;
   border-bottom: 0.3px solid #d0c3b2;
+}
+.dashboardPage .dashboardBody .dashboardHeading a {
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  display: flex;
+  align-items: center;
+  margin: 1rem 2rem;
+  padding: 4px 8px 2px 10px;
+  box-sizing: border-box;
+  margin-left: auto;
+  background-color: rgb(84, 75, 63);
+  border: none;
+  border-bottom: 1px solid antiquewhite;
+  color: antiquewhite;
+  text-transform: uppercase;
+  font-family: "Overpass Mono", monospace;
+  font-size: 18px;
+  cursor: pointer;
+  height: 40px;
+  transition: 380ms all ease-in-out;
+  background: transparent;
+  border: none;
+  margin: -10px auto 10px 0;
+}
+.dashboardPage .dashboardBody .dashboardHeading a p {
+  margin: 0px 5px;
+}
+.dashboardPage .dashboardBody .dashboardHeading a:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+.dashboardPage .dashboardBody .dashboardHeading a:hover {
+  background-color: rgba(250, 235, 215, 0.363);
 }
 .dashboardPage .dashboardBody .cardLayout {
   height: -webkit-max-content;
@@ -615,12 +653,7 @@
   font-size: 18px;
   cursor: pointer;
   height: 40px;
-  transition: 500ms all ease-in-out;
-}
-.dashboardPage .dashboardBody .dashBoardBtn:hover {
-  background: none;
-  color: #000;
-  border-color: #000;
+  transition: 380ms all ease-in-out;
 }
 .dashboardPage .dashboardBody .dashBoardBtn p {
   margin: 0px 5px;
@@ -628,6 +661,11 @@
 .dashboardPage .dashboardBody .dashBoardBtn:disabled {
   opacity: 0.4;
   cursor: not-allowed;
+}
+.dashboardPage .dashboardBody .dashBoardBtn:hover {
+  background: none;
+  color: #000;
+  border-color: #000;
 }
 .dashboardPage .footer {
   display: flex;

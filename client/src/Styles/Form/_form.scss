@@ -36,18 +36,21 @@ $darkText: #b0a393;
     font-size: 18px;
     cursor: pointer;
     height: 40px;
-    transition: 500ms all ease-in-out;
-    &:hover{
-        background: none;
-        color: #000;
-        border-color: #000;
-    }
+    transition: 380ms all ease-in-out;
     p{
         margin: 0px 5px
     }
     &:disabled{
         opacity: 0.4;
         cursor: not-allowed
+    }
+}
+
+@mixin buttonThemeHover{
+    &:hover{
+        background: none;
+        color: #000;
+        border-color: #000;
     }
 }
 
@@ -137,7 +140,8 @@ $darkText: #b0a393;
             }
         }
         .postButton{
-                @include buttonTheme
+                @include buttonTheme;
+                @include buttonThemeHover
         }
     }
     .footer{
