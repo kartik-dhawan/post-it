@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Overpass+Mono:wght@300;400;500&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Josefin+Slab:ital,wght@0,200;0,300;0,400;0,600;1,400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;400;500&display=swap");
 .homePage {
   height: 100vh;
   max-height: -webkit-fill-available;
@@ -492,7 +493,7 @@
   cursor: not-allowed;
 }
 .dashboardPage .dashboardBody .dashboardHeading a:hover {
-  background-color: rgba(250, 235, 215, 0.363);
+  background-color: rgba(148, 123, 90, 0.363);
 }
 .dashboardPage .dashboardBody .cardLayout {
   height: -webkit-max-content;
@@ -701,6 +702,129 @@
 }
 .dashboardPage .footer > div .linkedinLink:any-link, .dashboardPage .footer div .email:any-link {
   color: #d0c3b2;
+}
+
+.aboutPage {
+  background-color: antiquewhite;
+  min-height: 100vh;
+  max-height: -webkit-fill-available;
+  display: flex;
+  flex-direction: column;
+}
+.aboutPage .header {
+  display: flex;
+  align-items: center;
+  font-size: 18px;
+  text-transform: uppercase;
+  height: 6rem;
+  padding: 1.5rem;
+  box-sizing: border-box;
+}
+.aboutPage .header > a:nth-child(2) {
+  margin-left: auto;
+}
+.aboutPage .header > a {
+  margin: 1rem;
+}
+.aboutPage .header > a:-webkit-any-link {
+  color: #000;
+  text-decoration: none;
+}
+.aboutPage .header > a:-moz-any-link {
+  color: #000;
+  text-decoration: none;
+}
+.aboutPage .header > a:any-link {
+  color: #000;
+  text-decoration: none;
+}
+.aboutPage .aboutSection {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin: 30px auto 0px auto;
+  font-family: "Raleway", sans-serif;
+}
+@media (min-width: 920px) {
+  .aboutPage .aboutSection {
+    flex-direction: row;
+    width: 90%;
+  }
+}
+.aboutPage .aboutSection .aboutImage {
+  background: url("/Users/kartik.dhawan/dev/mern/post-it/client/src/assets/IMG_0479.jpg");
+  width: 100%;
+  aspect-ratio: 1.38095238;
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  margin: 10px auto;
+}
+@media (min-width: 768px) {
+  .aboutPage .aboutSection .aboutImage {
+    height: 420px;
+  }
+}
+@media (min-width: 920px) {
+  .aboutPage .aboutSection .aboutImage {
+    height: 330px;
+  }
+}
+@media (min-width: 1100px) {
+  .aboutPage .aboutSection .aboutImage {
+    height: 430px;
+  }
+}
+@media (min-width: 920px) {
+  .aboutPage .aboutSection .aboutBody {
+    margin: 0px 50px;
+  }
+}
+.aboutPage .aboutSection .aboutBody .aboutName {
+  font-size: 27px;
+  margin: 30px 0px;
+}
+@media (min-width: 920px) {
+  .aboutPage .aboutSection .aboutBody .aboutName {
+    margin-top: 7px;
+  }
+}
+.aboutPage .aboutSection .aboutBody .aboutDetails {
+  font-size: 18px;
+  text-align: justify;
+}
+.aboutPage .aboutSection .aboutBody .aboutDetails .detailsPara {
+  margin: 20px 0px;
+  line-height: 27px;
+}
+.aboutPage .aboutSection .aboutBody .aboutDetails #connect {
+  font-weight: 500;
+  font-style: italic;
+}
+.aboutPage .aboutSection .aboutBody .aboutDetails .footerLinkedin {
+  display: flex;
+  align-items: center;
+}
+.aboutPage .aboutSection .aboutBody .aboutDetails .footerLinkedin .linkedinLink {
+  margin: 0px 5px;
+}
+.aboutPage .aboutSection .aboutBody .aboutDetails .footerLinkedin .linkedinLink:-webkit-any-link {
+  color: #000;
+}
+.aboutPage .aboutSection .aboutBody .aboutDetails .footerLinkedin .linkedinLink:-moz-any-link {
+  color: #000;
+}
+.aboutPage .aboutSection .aboutBody .aboutDetails .footerLinkedin .linkedinLink:any-link {
+  color: #000;
+}
+.aboutPage .aboutSection .aboutBody .aboutDetails .email {
+  display: flex;
+  align-items: center;
+}
+.aboutPage .aboutSection .aboutBody .aboutDetails .email p {
+  margin: 15px 5px;
 }
 
 body {

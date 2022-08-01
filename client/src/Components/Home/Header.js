@@ -14,7 +14,7 @@ const Header = ({ viewPost }) => {
       >
         Github
       </a>
-      <a href="/" className="homeAbout">
+      <a href="/about" className="homeAbout">
         About
       </a>
     </div>
