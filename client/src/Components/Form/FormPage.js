@@ -13,6 +13,7 @@ import { toPng, toJpeg, toBlob, toPixelData, toSvg } from "html-to-image";
 import { HiDownload } from "react-icons/hi";
 import { IoClose } from "react-icons/io5";
 import { updateData } from "../../redux/reducers/postsSlice";
+import { toggleIsUpdating } from "../../redux/reducers/updatePostSlice";
 
 const FormPage = () => {
   const dispatch = useDispatch();
@@ -76,7 +77,9 @@ const FormPage = () => {
         </div>
       ) : (
         <>
-          <div className="formHead">Create your own song-post</div>
+          <div className="formHead">
+            {isUpdating ? "Update a song post" : "Create your own song-post"}
+          </div>
           <form className="postForm" noValidate>
             <label htmlFor="title">
               Title
@@ -149,10 +152,10 @@ const FormPage = () => {
               <button
                 className="postButton"
                 onClick={(e) => {
-                  console.log("Updated");
-                  console.log(post);
                   e.preventDefault();
                   dispatch(updateData({ id: post._id, post: post }));
+                  dispatch(toggleIsUpdating());
+                  setViewPost(!viewPost);
                 }}
               >
                 <BsArrowRight />
