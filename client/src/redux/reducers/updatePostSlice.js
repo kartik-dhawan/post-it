@@ -17,8 +17,11 @@ const updatePostSlice = createSlice({
       state.postToUpdate = action.payload;
       state.isUpdating = true;
     },
+    toggleIsUpdating: (state) => {
+      state.isUpdating = false;
+    },
   },
 });
 
-export const { getUpdatePost } = updatePostSlice.actions;
+export const { getUpdatePost, toggleIsUpdating } = updatePostSlice.actions;
 export default updatePostSlice.reducer;

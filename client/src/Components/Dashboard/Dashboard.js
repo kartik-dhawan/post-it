@@ -23,7 +23,11 @@ const Dashboard = () => {
       <Header />
       <section className="dashboardBody">
         <div className="dashboardHeading">
-          Your very own customizable dashboard
+          <p>Your very own customizable dashboard</p>
+          <a href="/form" className="postButton">
+            <BsArrowRight />
+            <p>Create</p>
+          </a>
         </div>
         <div className="cardLayout">
           {isLoading ? (
