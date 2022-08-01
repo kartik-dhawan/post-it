@@ -12,6 +12,7 @@ import * as htmlToImage from "html-to-image";
 import { toPng, toJpeg, toBlob, toPixelData, toSvg } from "html-to-image";
 import { HiDownload } from "react-icons/hi";
 import { IoClose } from "react-icons/io5";
+import { updateData } from "../../redux/reducers/postsSlice";
 
 const FormPage = () => {
   const dispatch = useDispatch();
@@ -27,12 +28,16 @@ const FormPage = () => {
   };
   const [post, setPost] = useState(initialEmptyPost);
 
+  const postToUpdate = useSelector((state) => state.update.postToUpdate);
+  const isUpdating = useSelector((state) => state.update.isUpdating);
+
   useEffect(() => {
     dispatch(getData());
+    setPost(postToUpdate);
   }, [dispatch]);
 
   const data = useSelector((state) => state.posts.posts);
-  console.log(data);
+  data[0] && console.log(data);
 
   return (
     <div className="formPage">
@@ -140,7 +145,20 @@ const FormPage = () => {
                 <input></input>
               </FileBase64>
             </label>
-            {post.title === "" || post.artist === "" || post.file === "" ? (
+            {isUpdating ? (
+              <button
+                className="postButton"
+                onClick={(e) => {
+                  console.log("Updated");
+                  console.log(post);
+                  e.preventDefault();
+                  dispatch(updateData({ id: post._id, post: post }));
+                }}
+              >
+                <BsArrowRight />
+                <p>Update</p>
+              </button>
+            ) : post.title === "" || post.artist === "" || post.file === "" ? (
               <button type="submit" className="postButton" disabled>
                 <BsArrowRight />
                 <p>Create & Save to Dashboard</p>
@@ -151,7 +169,7 @@ const FormPage = () => {
                 className="postButton"
                 onClick={(e) => {
                   e.preventDefault();
-                  dispatch(postData({ post }));
+                  dispatch(postData({ post: post }));
                   setViewPost(!viewPost);
                   setPost(initialEmptyPost);
                 }}
@@ -160,7 +178,10 @@ const FormPage = () => {
                 <p>Create & Save to dashboard</p>
               </button>
             )}
-            {post.title === "" || post.artist === "" || post.file === "" ? (
+
+            {isUpdating ? (
+              ""
+            ) : post.title === "" || post.artist === "" || post.file === "" ? (
               <button type="submit" className="postButton" disabled>
                 <BsArrowRight />
                 <p>Create</p>
@@ -178,7 +199,6 @@ const FormPage = () => {
                 <p>Create</p>
               </button>
             )}
-
             <a href="/dashboard" className="postButton">
               <BsArrowRight />
               <p>Dashboard</p>

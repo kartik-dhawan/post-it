@@ -1,3 +1,4 @@
+import mongoose from "mongoose";
 import SongPosts from "../Models/postNote.js";
 
 export const getPosts = async (req, res) => {
@@ -22,5 +23,20 @@ export const createPosts = async (req, res) => {
     res.status(201).json(newPost);
   } catch (error) {
     res.status(409).json({ error: error.message });
+  }
+};
+
+export const updatePost = async (req, res) => {
+  const { id: _id } = req.params;
+  const post = req.body;
+
+  if (!mongoose.Types.ObjectId.isValid(_id))
+    return res.status(404).send("No posts with that id");
+  try {
+    const updatedPost = await SongPosts.findByIdAndUpdate(_id, post);
+    res.json(updatedPost);
+    console.log(_id);
+  } catch (error) {
+    res.send(409).send(error.message, { new: true });
   }
 };

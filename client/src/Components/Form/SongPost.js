@@ -1,7 +1,15 @@
 import React from "react";
 import { MdLibraryMusic } from "react-icons/md";
+import { AiTwotoneEdit } from "react-icons/ai";
+import { MdDelete } from "react-icons/md";
+import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { getUpdatePost } from "../../redux/reducers/updatePostSlice";
 
-const SongPost = ({ post }) => {
+const SongPost = ({ post, update, del }) => {
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+
   return (
     <div className="songPost">
       <img
@@ -17,6 +25,33 @@ const SongPost = ({ post }) => {
       <div className="postCredits">
         <MdLibraryMusic className="postIcon" />
         <div className="postCreditText">Song-Post</div>
+      </div>
+      <div className="updateDeleteOptions">
+        {update ? (
+          <button
+            className="updatePost"
+            onClick={() => {
+              navigate("/form");
+              dispatch(getUpdatePost(post));
+            }}
+          >
+            <AiTwotoneEdit />
+          </button>
+        ) : (
+          ""
+        )}
+        {del ? (
+          <button
+            className="deletePost"
+            onClick={() => {
+              console.log("deleted a post");
+            }}
+          >
+            <MdDelete />
+          </button>
+        ) : (
+          ""
+        )}
       </div>
     </div>
   );

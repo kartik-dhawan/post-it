@@ -16,6 +16,8 @@ const Dashboard = () => {
   const cardsData = useSelector((state) => state.posts.posts);
   const isLoading = useSelector((state) => state.posts.isLoading);
 
+  const updateDeleteBool = true;
+
   return (
     <div className="dashboardPage">
       <Header />
@@ -33,7 +35,14 @@ const Dashboard = () => {
           ) : (
             <div className="cardsContainer">
               {cardsData.map((card) => {
-                return <SongPost key={card._id} post={card} />;
+                return (
+                  <SongPost
+                    key={card._id}
+                    post={card}
+                    update={updateDeleteBool}
+                    del={updateDeleteBool}
+                  />
+                );
               })}
             </div>
           )}
