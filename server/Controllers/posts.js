@@ -35,8 +35,20 @@ export const updatePost = async (req, res) => {
   try {
     const updatedPost = await SongPosts.findByIdAndUpdate(_id, post);
     res.json(updatedPost);
-    console.log(_id);
   } catch (error) {
     res.send(409).send(error.message, { new: true });
+  }
+};
+
+export const deletePost = async (req, res) => {
+  const { id: _id } = req.params;
+
+  if (!mongoose.Types.ObjectId.isValid(_id))
+    return res.status(404).send("No posts with that id");
+
+  try {
+    await SongPosts.findByIdAndDelete(_id);
+  } catch (error) {
+    res.send(409).send(error.message);
   }
 };
