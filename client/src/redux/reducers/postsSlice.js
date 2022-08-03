@@ -1,11 +1,13 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import { fetchPosts, createPosts, updatePost } from "../../api/api";
+import { fetchPosts, createPosts, updatePost, deletePost } from "../../api/api";
 
 export const getData = createAsyncThunk("data/getData", fetchPosts);
 
 export const postData = createAsyncThunk("data/postData", createPosts);
 
 export const updateData = createAsyncThunk("data/updateData", updatePost);
+
+export const deleteData = createAsyncThunk("data/deleteData", deletePost);
 
 const postsSlice = createSlice({
   name: "fetch-posts",
@@ -50,6 +52,18 @@ const postsSlice = createSlice({
     [updateData.rejected]: (state) => {
       state.isLoading = false;
     },
+  },
+
+  // DELETE
+  [deleteData.pending]: (state) => {
+    state.isLoading = true;
+  },
+  [deleteData.fulfilled]: (state, action) => {
+    state.posts = action.payload;
+    state.isLoading = false;
+  },
+  [deleteData.rejected]: (state) => {
+    state.isLoading = false;
   },
 });
 

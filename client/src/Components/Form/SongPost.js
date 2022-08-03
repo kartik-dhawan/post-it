@@ -5,6 +5,7 @@ import { MdDelete } from "react-icons/md";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { getUpdatePost } from "../../redux/reducers/updatePostSlice";
+import { deleteData } from "../../redux/reducers/postsSlice";
 
 const SongPost = ({ post, update, del }) => {
   const navigate = useNavigate();
@@ -45,6 +46,9 @@ const SongPost = ({ post, update, del }) => {
             className="deletePost"
             onClick={() => {
               console.log("deleted a post");
+              dispatch(deleteData({ id: post._id }));
+              navigate("/dashboard");
+              window.location.reload(false);
             }}
           >
             <MdDelete />
