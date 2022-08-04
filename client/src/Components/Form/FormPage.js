@@ -132,12 +132,7 @@ const FormPage = () => {
               />
             </label>
             <label htmlFor="image">
-              Select Cover
-              <FileUploadIcon
-                onClick={() => {
-                  document.getElementById("image").click();
-                }}
-              />
+              Cover
               <FileBase64
                 multiple={false}
                 onDone={({ base64 }) => {
@@ -148,64 +143,70 @@ const FormPage = () => {
                 <input></input>
               </FileBase64>
             </label>
-            {isUpdating ? (
-              <button
-                className="postButton"
-                onClick={(e) => {
-                  e.preventDefault();
-                  dispatch(updateData({ id: post._id, post: post }));
-                  dispatch(toggleIsUpdating());
-                  setViewPost(!viewPost);
-                }}
-              >
-                <BsArrowRight />
-                <p>Update</p>
-              </button>
-            ) : post.title === "" || post.artist === "" || post.file === "" ? (
-              <button type="submit" className="postButton" disabled>
-                <BsArrowRight />
-                <p>Create & Save to Dashboard</p>
-              </button>
-            ) : (
-              <button
-                type="submit"
-                className="postButton"
-                onClick={(e) => {
-                  e.preventDefault();
-                  dispatch(postData({ post: post }));
-                  setViewPost(!viewPost);
-                  setPost(initialEmptyPost);
-                }}
-              >
-                <BsArrowRight />
-                <p>Create & Save to dashboard</p>
-              </button>
-            )}
+            <div className="formPageButtonGroup">
+              {isUpdating ? (
+                <button
+                  className="postButton"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    dispatch(updateData({ id: post._id, post: post }));
+                    dispatch(toggleIsUpdating());
+                    setViewPost(!viewPost);
+                  }}
+                >
+                  <BsArrowRight />
+                  <p>Update</p>
+                </button>
+              ) : post.title === "" ||
+                post.artist === "" ||
+                post.file === "" ? (
+                <button type="submit" className="postButton" disabled>
+                  <BsArrowRight />
+                  <p>Save to Dashboard</p>
+                </button>
+              ) : (
+                <button
+                  type="submit"
+                  className="postButton"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    dispatch(postData({ post: post }));
+                    setViewPost(!viewPost);
+                    setPost(initialEmptyPost);
+                  }}
+                >
+                  <BsArrowRight />
+                  <p>Create & Save to dashboard</p>
+                </button>
+              )}
 
-            {isUpdating ? (
-              ""
-            ) : post.title === "" || post.artist === "" || post.file === "" ? (
-              <button type="submit" className="postButton" disabled>
+              {isUpdating ? (
+                ""
+              ) : post.title === "" ||
+                post.artist === "" ||
+                post.file === "" ? (
+                <button type="submit" className="postButton" disabled>
+                  <BsArrowRight />
+                  <p>Create</p>
+                </button>
+              ) : (
+                <button
+                  className="postButton"
+                  onClick={(e) => {
+                    console.log(post);
+                    e.preventDefault();
+                    setViewPost(!viewPost);
+                  }}
+                >
+                  <BsArrowRight />
+                  <p>Create</p>
+                </button>
+              )}
+              <a href="/dashboard" className="postButton">
                 <BsArrowRight />
-                <p>Create</p>
-              </button>
-            ) : (
-              <button
-                className="postButton"
-                onClick={(e) => {
-                  console.log(post);
-                  e.preventDefault();
-                  setViewPost(!viewPost);
-                }}
-              >
-                <BsArrowRight />
-                <p>Create</p>
-              </button>
-            )}
-            <a href="/dashboard" className="postButton">
-              <BsArrowRight />
-              <p>Dashboard</p>
-            </a>
+                <p>Dashboard</p>
+              </a>
+            </div>
           </form>
         </>
       )}
