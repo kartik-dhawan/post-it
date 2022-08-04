@@ -7,12 +7,16 @@ import { useDispatch } from "react-redux";
 import { getUpdatePost } from "../../redux/reducers/updatePostSlice";
 import { deleteData } from "../../redux/reducers/postsSlice";
 
-const SongPost = ({ post, update, del }) => {
+const SongPost = ({ post, update, del, viewPost }) => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
+  const refresh = () => {
+    window.location.reload(false);
+  };
+
   return (
-    <div className="songPost">
+    <div className={viewPost ? "createdPostResponsiveSizes" : "songPost"}>
       <img
         alt="no file available"
         src={`${post.file}`}
@@ -47,8 +51,9 @@ const SongPost = ({ post, update, del }) => {
             onClick={() => {
               console.log("deleted a post");
               dispatch(deleteData({ id: post._id }));
-              navigate("/dashboard");
-              window.location.reload(false);
+              setTimeout(() => {
+                refresh();
+              }, 1000);
             }}
           >
             <MdDelete />

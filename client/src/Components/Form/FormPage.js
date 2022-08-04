@@ -46,7 +46,7 @@ const FormPage = () => {
       {viewPost ? (
         <div className="createdPostPage">
           <div className="songPostContainer">
-            <SongPost post={post} />
+            <SongPost post={post} viewPost={viewPost} />
           </div>
           <div className="cardActionBtns">
             <a
@@ -172,11 +172,10 @@ const FormPage = () => {
                     e.preventDefault();
                     dispatch(postData({ post: post }));
                     setViewPost(!viewPost);
-                    setPost(initialEmptyPost);
                   }}
                 >
                   <BsArrowRight />
-                  <p>Create & Save to dashboard</p>
+                  <p>Save to dashboard</p>
                 </button>
               )}
 
