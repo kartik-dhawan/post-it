@@ -132,12 +132,7 @@ const FormPage = () => {
               />
             </label>
             <label htmlFor="image">
-              Select Cover
-              <FileUploadIcon
-                onClick={() => {
-                  document.getElementById("image").click();
-                }}
-              />
+              Cover
               <FileBase64
                 multiple={false}
                 onDone={({ base64 }) => {

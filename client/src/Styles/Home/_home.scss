@@ -4,9 +4,9 @@
     font-size: 18px;
     text-transform: uppercase;
     height: 6rem;
-    width: 100vw;
     padding: 1.5rem;
     box-sizing: border-box;
+    width: 100%;
     & > a:nth-child(2){
         margin-left: auto;
     }
@@ -23,8 +23,8 @@
     display: flex;
     align-items: center;
     height: 6rem;
-    width: 100vw;
     padding: 1.5rem;
+    width: 100%;
     box-sizing: border-box;
     text-transform: uppercase;
     & > div{

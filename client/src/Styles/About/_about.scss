@@ -9,6 +9,9 @@
         position: fixed;
         background-color: #fde4c3;
         z-index: 1000;
+        @include m{
+            background-color: antiquewhite;
+        }
     }
     .aboutSection{
         width: 80%;
