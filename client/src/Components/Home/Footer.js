@@ -1,8 +1,10 @@
 import React from "react";
 import { BsArrowRight } from "react-icons/bs";
+import { useNavigate } from "react-router-dom";
 
 const Footer = ({ viewPost }) => {
   const email = "dhawankartik7@gmail.com";
+  const navigate = useNavigate();
 
   return (
     <div className={`footer ${viewPost ? "darkFooter" : ""}`}>
@@ -19,9 +21,18 @@ const Footer = ({ viewPost }) => {
       </div>
       <div className="footerEmail">
         <BsArrowRight />
-        <a href="/" className="email">
+        <div
+          className="email"
+          style={{
+            textDecoration: "underline",
+          }}
+          onClick={() => {
+            navigate("/about");
+            window.scrollBy(0, 500);
+          }}
+        >
           Email
-        </a>
+        </div>
       </div>
     </div>
   );

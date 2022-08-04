@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const URL = "http://localhost:5001/posts";
+const URL = "https://song-posts.herokuapp.com/posts";
 
 export const fetchPosts = async () => {
   return axios.get(URL).then((res) => res.data);

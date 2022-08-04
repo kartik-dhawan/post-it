@@ -23,19 +23,19 @@ $darkText: #b0a393;
     width: max-content;
     display: flex;
     align-items: center;
-    margin: 1rem 2rem;
-    padding: 4px 8px 2px 10px;
+    margin: 0.3rem 0rem;
+    padding: 7px 4px 5px 4px;
     box-sizing: border-box;
     margin-left: auto;
-    background-color: rgb(84, 75, 63);
+    background-color: #544b3f;
     border: none;
     border-bottom: 1px solid antiquewhite;
-    color: antiquewhite;
+    color: #faebd7;
     text-transform: uppercase;
     font-family: 'Overpass Mono', monospace;
-    font-size: 18px;
+    font-size: 16px;
     cursor: pointer;
-    height: 40px;
+    height: max-content;
     transition: 380ms all ease-in-out;
     p{
         margin: 0px 5px
@@ -107,8 +107,11 @@ $darkText: #b0a393;
         }
     }
     .formHead{
-        font-size: 20px;
-        margin: 2rem 2rem 1rem 2rem;
+        font-size: 16px;
+        margin: 1rem 2rem 0rem 2rem;
+        @include m{
+            margin-top: 2rem;
+        }
         color: lighten(rgb(36, 25, 7), 20%);
         text-transform: uppercase;
     }
@@ -125,6 +128,13 @@ $darkText: #b0a393;
         & > label:nth-child(1), label:nth-child(2), label:nth-child(3), label:nth-child(4){
             margin: 10px 1rem;
             display: flex;
+            font-size: 22px;
+            @include m{
+                font-size: 30px;
+            }
+            @include l{
+                font-size: 35px;
+            }
             input{
                 @include textfield;
             }
@@ -132,6 +142,13 @@ $darkText: #b0a393;
         & > label:nth-child(5){
             margin: 10px 1rem;
             display: flex;
+            font-size: 22px;
+            @include m{
+                font-size: 30px;
+            }
+            @include l{
+                font-size: 35px;
+            }
             svg{
                 margin: 2px 25px;
                 display: flex;
@@ -141,7 +158,12 @@ $darkText: #b0a393;
         }
         .postButton{
                 @include buttonTheme;
-                @include buttonThemeHover
+                @include buttonThemeHover;
+        }
+        .formPageButtonGroup{
+            display: flex;
+            flex-wrap: wrap;
+            margin: 1rem 20px 0rem 20px;
         }
     }
     .footer{

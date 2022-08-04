@@ -4,6 +4,7 @@
     font-size: 18px;
     text-transform: uppercase;
     height: 6rem;
+    width: 100vw;
     padding: 1.5rem;
     box-sizing: border-box;
     & > a:nth-child(2){
@@ -22,6 +23,7 @@
     display: flex;
     align-items: center;
     height: 6rem;
+    width: 100vw;
     padding: 1.5rem;
     box-sizing: border-box;
     text-transform: uppercase;
@@ -56,20 +58,41 @@
         padding: 1.5rem;
         .sectionTitle{
             text-transform: uppercase;
-            font-size:30px;
+            font-size:32px;
             margin: 1rem;
+            @include m{
+                font-size: 35px;
+            }
+            @include l{
+                font-size: 39px;
+            }
         }
         .sectionBody{
-            font-size: 25px;
+            font-size: 18px;
             font-weight: 100;
-            margin: 1rem;
+            margin: 10px 1rem;
+            @include m{
+                font-size: 22px;
+                margin: 1rem;
+            }
+            @include l{
+                font-size: 26px;
+            }
         }
         .sectionLink{
             display: flex;
             align-items: center;
             box-sizing: border-box;
-            padding: 2rem 0.5rem;
-            font-size: 18px;
+            padding: 23px 9px 0px 9px;
+            font-size: 17px;
+            @include m{
+                font-size: 20px;
+                padding: 29px 9px 0px 9px;
+            }
+            @include l{
+                font-size: 23px;
+                padding: 36px 9px 0px 9px;
+            }
             height: 3rem;
             & > div{
                 margin: 0.5rem;
