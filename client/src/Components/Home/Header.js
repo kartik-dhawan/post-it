@@ -7,7 +7,7 @@ const Header = ({ viewPost }) => {
         Post It
       </a>
       <a
-        href="https://github.com/kartikd07"
+        href="https://github.com/kartik-dhawan"
         target="_blank"
         className="homeGithub"
         rel="noreferrer"

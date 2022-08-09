@@ -66,11 +66,9 @@ $darkText: #b0a393;
 
 .formPage{
     background-color: antiquewhite;
-    min-height: 100vh;
-    height: max-content;
+    height: 100vh;
     max-height: -webkit-fill-available;
     width: 100vw;
-    max-width: -webkit-fill-available;
     display: flex;
     flex-direction: column;
     position: relative;
